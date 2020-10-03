@@ -1,0 +1,35 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    char name;
+    int num_days;
+    double odometer_i, odometer_f, bill_f;
+    cout << fixed << setprecision(2);
+    cout << "Inital odometer reading: " << "\n";
+    cin >> odometer_i;
+    cout << "Final odometer reading: " << "\n";
+    cin >> odometer_f;
+    cout << "Customer name: " << "\n";
+    cin >> name;
+    cout << "Day number (1=Sun, 2=Mon, etc.): " << "\n";
+    cout << "---" << "\n";
+    
+    if (odometer_i < 0)
+        {cout << "The inital odometer reading must be nonnegative."; }
+    
+    if (odometer_f < odometer_i)
+        {cout << "The final reading must be atleast as largeas the inital reading.";}
+        
+    if (name == '\n')
+        {cout << "You must enter a customer name." ;}
+        
+    if (num_days < 1 or num_days > 7)
+        {cout << "The day number must be in the range 1 through 7." ;}
+        
+    else
+        {cout << "The bill for " << name << " is $" << bill_f;}
+    
+    return 0;
+}
